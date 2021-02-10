@@ -1,4 +1,4 @@
-package com.example.firebaseauth;
+package com.jayram.jobportal;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -17,11 +17,6 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.Calendar;
 import java.util.HashMap;
 
@@ -36,7 +31,6 @@ public class Employee extends AppCompatActivity {
     public TextView edob;
     public EditText editecountry;
     public DatePickerDialog.OnDateSetListener mDateSetListener;
-    public FirebaseFirestore db=FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,17 +60,7 @@ public class Employee extends AppCompatActivity {
                 map.put("country",ecountry);
                 map.put("DOB",dob);
 
-                db.collection("Employees").add(map).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Toast.makeText(Employee.this, "Data has been stored successfully", Toast.LENGTH_SHORT).show();
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(Employee.this, "Error! "+e, Toast.LENGTH_SHORT).show();
-                    }
-                });
+                Toast.makeText(Employee.this, "Error fetching employees! ", Toast.LENGTH_SHORT).show();
             }
         });
         edob.setOnClickListener(new View.OnClickListener() {

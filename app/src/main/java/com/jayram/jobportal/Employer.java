@@ -1,6 +1,6 @@
-package com.example.firebaseauth;
+package com.jayram.jobportal;
 
-public class employer
+public class Employer
 {
     private String editname;
     private String editcname;
@@ -9,12 +9,12 @@ public class employer
     private String editcountry;
     private String editvac;
     private String editdocumentid;
-    employer()
+    Employer()
     {
 
     }
 
-    private employer(String name, String cname, String phone, String city, String country, String vacancy, String documentid)
+    private Employer(String name, String cname, String phone, String city, String country, String vacancy, String documentid)
     {
         this.editname=name;
         this.editcname=cname;

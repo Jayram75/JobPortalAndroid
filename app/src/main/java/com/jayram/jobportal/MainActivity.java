@@ -1,4 +1,4 @@
-package com.example.firebaseauth;
+package com.jayram.jobportal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
